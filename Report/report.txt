@@ -1,0 +1,21 @@
+EECS 731 Project 6
+D(St)reams of Anomalies
+Goal: "Build one or more anomaly detection models to determine the  anomalies  using the other columns as features"
+
+Data from: 
+https://www.kaggle.com/boltzmannbrain/nab
+
+
+3.  Load the  one  of the data set into panda data frames
+
+My first inclination is to look into the "artificialWithAnomaly" dataset as this seems like the simplest place to start with anomoly detection.
+Clean, precise data may not be realistic but first starting out I'd like the limit the amount of variables that may futz with my implementation.
+
+The artificialWithAnomaly dataset seems to have a few different .csv files, according to the README.md located within the Data subfolder
+"Artifically-generated data with varying types of anomalies."
+Pretty straight forward. I'll be choosing one of these .csv files more or less at random, "art_daily_jumpsup.csv" seems as good as any place to start.
+Loading it into Pandas I see the dataset isn't very large nor does it have many 'features'. 
+It simply as two columns, 'timestamp' and 'value' with 4031 rows. Will this be an issue later? This is something I'll be keeping in mind as I go forward.
+
+4.  Formulate one or two ideas on how feature engineering would help the data set to establish additional value using exploratory data analysis 
+
