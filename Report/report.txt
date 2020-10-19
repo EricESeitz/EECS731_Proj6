@@ -39,4 +39,9 @@ I did this with initialData['timestamp'].values.astype(float), which converted a
 This (in theory) shouldn't effect the model, the dates were more for human readability 
 
 This, however, didn't work as the model continued to give me type error:
+ValueError: Unknown label type: (array([ 18.00100982,  18.00341479,  18.01353595, ..., 164.33691534,
+       164.73603062, 164.93686239]),)
 
+After about 2 hours of troubleshooting I decided to abandon this method, through constant errors and unusable data (See art_y_predPlot.png) I can't figure out how to get any useful information from this naive bayes Gaussian model
+
+I'm going to attempt another model tomorrow.
