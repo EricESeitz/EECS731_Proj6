@@ -67,3 +67,10 @@ According to the "accuracy percentage" the first run gives us an accuracy of 374
 
 With some adjustments to the isolation model (tweaking the "contamination" setting)  we get a much better results (See art_isolation_anomaly02.png)
 This resuld isolates the anomolies well with only a few 'acceptable' datapoints also included. I'm much happier with this result.
+
+Conclusions:
+
+Isolation Forest did turn out the best in my case, I'm happy with how it was able to identify outliers and being able to tweak it's "sensitivity". 
+I'm a little annoyed I spent so much time on Naive Bayes just floundering to get the code ran, tweaking how datastructures are set up or the data types isn't exactly rewarding.
+
+I'd say overall I'm feeling OK about this project, maybe I should have abandoned Naive Bayes earlier in favor of Isolation Forest. At least I was able to get a decent result, or what to me looks like a decent result.
