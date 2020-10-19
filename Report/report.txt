@@ -18,4 +18,15 @@ Loading it into Pandas I see the dataset isn't very large nor does it have many 
 It simply as two columns, 'timestamp' and 'value' with 4031 rows. Will this be an issue later? This is something I'll be keeping in mind as I go forward.
 
 4.  Formulate one or two ideas on how feature engineering would help the data set to establish additional value using exploratory data analysis 
+This part stumped be a little, wich such limited data and a lack of feratures I'm not sure what else I can do to this dataset.
+For now I'm going to continue on, I may load a more "realistic" dataset after this just to try it out but for now building the anomoly detection seems more important.
+
+5.  Build one or more anomaly detection models to determine the  anomalies  using the other columns as features 
+Going from the session slides I'm going to try Naive Bayes first.
+I'll be going off of this example to start with:
+https://heartbeat.fritz.ai/naive-bayes-classifier-in-python-using-scikit-learn-13c4deb83bcf
+
+I decided to plot the initial data (initialDataPlot.png in Visuals) to see where the spike was located and to get a better idea on the dataset.
+Per the example above we're going to predict y using x as an independent variable. In this instance we'll be using timestamp to predict value
+
 
