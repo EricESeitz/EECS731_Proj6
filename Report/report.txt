@@ -23,6 +23,9 @@ For now I'm going to continue on, I may load a more "realistic" dataset after th
 
 5.  Build one or more anomaly detection models to determine the  anomalies  using the other columns as features 
 
+Attempt 1:
+This Naive Bayes will be under the notebook "EECS731_Proj6_art_NBClassification"
+
 Going from the session slides I'm going to try Naive Bayes first.
 I'll be going off of this example to start with:
 https://heartbeat.fritz.ai/naive-bayes-classifier-in-python-using-scikit-learn-13c4deb83bcf
@@ -45,3 +48,22 @@ ValueError: Unknown label type: (array([ 18.00100982,  18.00341479,  18.01353595
 After about 2 hours of troubleshooting I decided to abandon this method, through constant errors and unusable data (See art_y_predPlot.png) I can't figure out how to get any useful information from this naive bayes Gaussian model
 
 I'm going to attempt another model tomorrow.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Attempt 2:
+Isolation forest looks interesting to me
+Going from here: 
+https://blog.paperspace.com/anomaly-detection-isolation-forest/
+
+I'm going to start a new notebook for this one, still using the artifical data as before.
+This Isolation forest will be under the notebook "EECS731_Proj6_art_Isolation"
+
+This method seems fairly simple, the first run of it produces some interesting results (See art_isolation_anomaly01.png)
+It looks like it's picking out a lot of the outliers but also grabbing "normal" data too judging by the numerous dots under a value of 100.
+
+I'd like to "tighten" up these results or make it more picky on selecting anomalies so we get better outputs.
+According to the "accuracy percentage" the first run gives us an accuracy of 374, this tells us it's finding more outlier then actually exist.
+
+With some adjustments to the isolation model (tweaking the "contamination" setting)  we get a much better results (See art_isolation_anomaly02.png)
+This resuld isolates the anomolies well with only a few 'acceptable' datapoints also included. I'm much happier with this result.
