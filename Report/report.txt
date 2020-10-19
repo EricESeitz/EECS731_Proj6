@@ -22,6 +22,7 @@ This part stumped be a little, wich such limited data and a lack of feratures I'
 For now I'm going to continue on, I may load a more "realistic" dataset after this just to try it out but for now building the anomoly detection seems more important.
 
 5.  Build one or more anomaly detection models to determine the  anomalies  using the other columns as features 
+
 Going from the session slides I'm going to try Naive Bayes first.
 I'll be going off of this example to start with:
 https://heartbeat.fritz.ai/naive-bayes-classifier-in-python-using-scikit-learn-13c4deb83bcf
@@ -29,4 +30,13 @@ https://heartbeat.fritz.ai/naive-bayes-classifier-in-python-using-scikit-learn-1
 I decided to plot the initial data (initialDataPlot.png in Visuals) to see where the spike was located and to get a better idea on the dataset.
 Per the example above we're going to predict y using x as an independent variable. In this instance we'll be using timestamp to predict value
 
+First issue I've run into, the 'timestamp' is listed as an object, not a date. I'll have to try and convert this to a proper date format.
+Second issue, running the model listed above gives an error:
+"UFuncTypeError: ufunc 'add' cannot use operands with types dtype('<M8[ns]') and dtype('<M8[ns]')"
+
+To solve this I'll try converting the dattime to seconds (per: https://www.semicolonworld.com/question/58523/plotting-pandas-timedelta), this should give a float
+I did this with initialData['timestamp'].values.astype(float), which converted all the dates to floating point numbers.
+This (in theory) shouldn't effect the model, the dates were more for human readability 
+
+This, however, didn't work as the model continued to give me type error:
 
